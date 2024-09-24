@@ -2,14 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #141414;
+    ;
     --foreground: #ededed;
   }
 }
@@ -17,11 +13,59 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+@font-face {
+  font-family: 'Glysa';
+  src: url('./fonts/Glysa.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lexend Deca';
+  src: url('./fonts/LexendDeca-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+h1 {
+  font-family: 'Glysa', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-family: 'Glysa', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 40px;
+  letter-spacing: 0;
+}
+
+h3 {
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 1;
+}
+
+body {
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1;
+}
+
+.message {
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1;
 }
