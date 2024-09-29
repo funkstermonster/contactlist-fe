@@ -29,3 +29,11 @@ export async function POST(request: NextRequest) {
         return new Response(error.message, { status: 500 });
     }
 }
+
+export async function PUT(request: NextRequest) {
+
+}
+
+export async function DELETE(request: NextRequest) {
+    
+}

@@ -1,13 +1,23 @@
+"use client";
+
 import ContactListItemProps from "@/app/models/ContactListItemProps";
 import ProfilePicSmall from "./profile-pic-small";
+import { useState } from "react";
+import ListItem from "./list-item";
 
 export default function ContactListItem({
   name,
   phone,
   profilePic,
 }: ContactListItemProps) {
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
+
+  const handleMoreClick = () => {
+    setIsMoreOpen((prev) => !prev);
+  };
+
   return (
-    <div className="w-[720px] h-[64px] p-[12px 0px] flex items-center gap-[16px] group">
+    <div className="w-full h-[64px] p-[12px 0px] flex items-center gap-[16px] group relative pb-5">
       {/* Profile Picture */}
       <ProfilePicSmall profilePic={profilePic} />
       {/* Name and Phone Number */}
@@ -30,9 +40,19 @@ export default function ContactListItem({
         </button>
 
         {/* More Button */}
-        <button className="w-[40px] h-[40px] p-[8px] rounded-lg hover:bg-grey-80">
+        <button
+          className="w-[40px] h-[40px] p-[8px] rounded-lg hover:bg-grey-80 relative"
+          onClick={handleMoreClick}
+        >
           <img src="/icons/More.svg" alt="More" />
         </button>
+
+        {/* More options: ListItem */}
+        {isMoreOpen && (
+          <div className="absolute right-[-220px] top-[50px] z-10">
+            <ListItem />
+          </div>
+        )}
       </div>
     </div>
   );
