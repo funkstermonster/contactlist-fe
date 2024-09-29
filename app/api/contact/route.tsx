@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 
 export async function POST(request: NextRequest) {
-    const apiUrl = "http://localhost:8080/contacts";
+    const apiUrl = "http://localhost:8080/api/contacts";
     const formData = new FormData();
 
     const contactData = await request.json();

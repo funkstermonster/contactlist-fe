@@ -5,6 +5,7 @@ import ButtonIconSecondary from "./components/UI/button-icon-secondary";
 import ButtonSpecial from "./components/UI/button-special";
 import ContactListItem from "./components/UI/contact-list-item";
 import Overlay from "./components/UI/overlay";
+import React from "react";
 
 export default function Home() {
   const [isOverlayVisible, setOverlayVisible] = useState(false);
@@ -95,6 +96,7 @@ export default function Home() {
               phone={"+36 01 234 5678"}
               profilePic={"photos/Adebayo.png"}
             />
+            <ContactListItem name={""} phone={""} profilePic={""}/>
           </div>
         </div>
         <div className="border-l-[1px] border-grey-60 h-full w-1/3"></div>
